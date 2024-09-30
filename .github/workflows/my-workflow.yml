@@ -24,7 +24,7 @@ jobs:
             github.issues.createComment({
               "issue_number": "${{ github.event.issue.number }}",
               "owner": "${{ github.repository_owner }}",
-              "repo": "${{ github.repository }}",
+              "repo": "${{ github.repository_id }}",
               "body": "Here is a joke: ${{ steps.joke.outputs.joke-output }}"
             })
 
