@@ -22,10 +22,10 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'Here is a joke: ${{ steps.joke.outputs.joke-output }}'
+              "issue_number": "${{ github.event.issue.number }}",
+              "owner": "${{ github.repository_owner }}",
+              "repo": "${{ github.repository }}",
+              "body": "Here is a joke: ${{ steps.joke.outputs.joke-output }}"
             })
 
       
